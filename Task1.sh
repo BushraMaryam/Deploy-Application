@@ -19,6 +19,7 @@ fi
 
 #creating a directory of tasks
 mkdir tasks
+cd tasks || exit
 #created a file within that directory
 touch task1.py
 echo "Compeleting task1 using automation, It's soo much fun" > task1.py
@@ -27,6 +28,6 @@ echo "Compeleting task1 using automation, It's soo much fun" > task1.py
 git add .
 git commit -m "$COMMIT_MSG"
 
-git config --global credential.helper cache
+git config credential.helper store
 
 git push origin main
